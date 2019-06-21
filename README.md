@@ -67,25 +67,25 @@ These are the steps we're going to follow in the workshop:
 
 ### Basics
 
-1. Virtual DOM
-2. Pre-fetching & Gatsby Link
-3. Gatsby Image
-4. Project Structure & Routing
-5. GraphQL
+* Virtual DOM
+* Pre-fetching & Gatsby Link
+* Gatsby Image
+* Project Structure & Routing
+* GraphQL
 
 ### Building Blocks
 
-1. Components
-2. Props
-3. Event Listeners
-4. Plugins
-  - Styled Components
-  - Web Font Loader
+* Components
+* Props
+* Event Listeners
+* Plugins
+  * Styled Components
+  * Web Font Loader
 
 ### Deploying to Netlify
 
-1. Build settings
+* Build settings
 
 ### Next Steps
 
-1. July Meetup: [Getting Started With Headless CMS](https://www.meetup.com/JAMstack-Cincinnati/events/261657135/)
+* July Meetup: [Getting Started With Headless CMS](https://www.meetup.com/JAMstack-Cincinnati/events/261657135/)
