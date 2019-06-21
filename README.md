@@ -1,97 +1,91 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+Getting Started with Static Site Generators
+==========
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This site supports JAMstack Cincinnati's June 2019 meetup on _Getting Started with Static Site Generators_. This meetup represents the second in a multi-step series on getting comfortable working with the JAMstack.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+[Workshop Presentation](https://docs.google.com/presentation/d/12_HeL80Du2B6GEUQhsxrLm4R0gKGQdaM9Hm1JEtk_HQ/edit?usp=sharing)
 
-## 🚀 Quick start
+Prerequisites
+----------
 
-1.  **Create a Gatsby site.**
+Before we dig in, make sure you have the prerequisites covered:
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+1. A basic understanding of [Git](https://git-scm.com/).
+2. A [GitHub account](https://github.com/).
+3. Basic knowledge of HTML and CSS.
+4. [Yarn](https://yarnpkg.com/en/docs/install) is not 100% necessary, but can make working with the project in development (on your machine) a little easier.
 
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+Setup
+----------
 
-1.  **Start developing.**
+In this workshop, we'll be building a static site using [GatsbyJS](https://www.gatsbyjs.org/). First, install the Gatsby-CLI:
 
-    Navigate into your new site’s directory and start it up.
+    $ yarn global add gatsby-cli
 
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
+Set up a new Gatsby project using this repo as a starter kit:
 
-1.  **Open the source code and start editing!**
+    $ gatsby new ssg-workshop https://github.com/jamstack-cincinnati/1906-getting-started-with-static-sites
 
-    Your site is now running at `http://localhost:8000`!
+Switch to the project directory:
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    $ cd ssg-workshop
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+Running the Project Locally
+----------
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+Gatsby-CLI includes [commands](https://www.gatsbyjs.org/docs/gatsby-cli/) to run a web server. Make sure the JS packages are installed first (`yarn install`) and then start  the development server:
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+    $ gatsby develop
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+After doing this, you should be able to navigate to `http://localhost:8000` in your browser and see the home page of the project.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+You can also build and run a production version of your site using:
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+    $ gatsby build
+    $ gatsby serve
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+If you run into build errors, you can trying reseting the project cache using:
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+    $ gatsby clean
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+Repo Notes
+----------
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+Check the Wiki tab for some helpful Static Site Generator links.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+### Branches
+* `master` - Workshop starter kit
+* `ssg-workshop-complete` - Completed workshop project
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+Workshop
+----------
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+These are the steps we're going to follow in the workshop:
 
-## 🎓 Learning Gatsby
+### Basics
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+1. Virtual DOM
+2. Pre-fetching & Gatsby Link
+3. Gatsby Image
+4. Project Structure & Routing
+5. GraphQL
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+### Building Blocks
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+1. Components
+2. Props
+3. Event Listeners
+4. Plugins
+  - Styled Components
+  - Web Font Loader
 
-## 💫 Deploy
+### Deploying to Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+1. Build settings
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+### Next Steps
+
+1. July Meetup: [Getting Started With Headless CMS](https://www.meetup.com/JAMstack-Cincinnati/events/261657135/)

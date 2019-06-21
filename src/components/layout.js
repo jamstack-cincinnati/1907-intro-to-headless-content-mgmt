@@ -24,24 +24,32 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}
+    >
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
+      <main
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
+          margin: '0 auto auto',
+          width: 960,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+        {children}
+      </main>
+
+      <footer style={{ textAlign: 'center' }}>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a> for <a href="https://www.meetup.com/JAMstack-Cincinnati/" target="_blank" rel="noopener noreferrer">JAMstack Cincinnati</a>
+      </footer>
+    </div>
   )
 }
 
