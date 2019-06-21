@@ -10,30 +10,33 @@ const Banner = styled.header`
 
 const Header = ({ siteTitle }) => (
   <Banner>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+    <div style={{
+      margin: `0 auto`,
+      maxWidth: 960,
+      padding: `1.45rem 1.0875rem`
+    }}>
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+        <Link to="/"
           css={`
             color: white;
             text-decoration: none;
             &:hover{
               text-decoration: underline;
             }
-          `}
-        >
+          `}>
           {siteTitle}
         </Link>
       </h1>
     </div>
   </Banner>
 )
+
+/*
+  This file shows three different ways of applying styles:
+    `Banner` and uses styled-components
+    `div` uses an inline style object
+    `Link` uses inline styled-components
+*/
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
