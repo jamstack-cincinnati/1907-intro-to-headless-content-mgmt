@@ -7,9 +7,9 @@ const Quote = (props) => (
       <p>{props.name}</p>
     </div>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <button>&and;</button>
+      <button>&#9650;</button>
       <div>{props.votes}</div>
-      <button>&or;</button>
+      <button>&#9660;</button>
     </div>
   </div>
 )
