@@ -67,17 +67,15 @@ These are the steps we're going to follow in the workshop:
 
 ### Basics
 
-* Virtual DOM
-* Pre-fetching & Gatsby Link
-* Gatsby Image
 * Project Structure & Routing
-* GraphQL
+* Pre-fetching with Gatsby Link
+* Gatsby Image
+
 
 ### Building Blocks
 
 * Components
 * Props
-* Event Listeners
 * State
 * Plugins
   * Styled Components
