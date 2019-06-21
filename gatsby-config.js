@@ -39,7 +39,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Dosis', 'Nunito']
+          families: ['Dosis', 'Nunito:400,600,700']
         }
       }
     }

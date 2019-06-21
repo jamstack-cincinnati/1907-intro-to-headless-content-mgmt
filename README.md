@@ -78,9 +78,11 @@ These are the steps we're going to follow in the workshop:
 * Components
 * Props
 * Event Listeners
+* State
 * Plugins
   * Styled Components
   * Web Font Loader
+
 
 ### Deploying to Netlify
 

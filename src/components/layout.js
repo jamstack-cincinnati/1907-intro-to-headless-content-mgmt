@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import Footer from "./footer"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -44,12 +45,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
-
-      <footer style={{ textAlign: 'center' }}>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a> for <a href="https://www.meetup.com/JAMstack-Cincinnati/" target="_blank" rel="noopener noreferrer">JAMstack Cincinnati</a>
-      </footer>
+      <Footer />
     </div>
   )
 }
