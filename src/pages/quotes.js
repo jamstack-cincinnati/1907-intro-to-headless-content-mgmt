@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const QuotePage = () => (
   <Layout>
     <SEO title="Quotes" />
-    <div class="breadcrumbs">
+    <div className="breadcrumbs">
       <Link to="/">home</Link> / quotes
     </div>
     <h1>Hi from the second page</h1>
