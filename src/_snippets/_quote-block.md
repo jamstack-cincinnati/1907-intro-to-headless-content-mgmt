@@ -78,6 +78,3 @@ div {
   padding: 8px 0px;
 }
 ```
-  padding: 8px 0px;
-}
-```
