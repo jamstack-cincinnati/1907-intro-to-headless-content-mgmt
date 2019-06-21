@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Getting Started with Static Site Generators`,
+    title: `JAMstack Cincinnati`,
     description: `Kick off a static site in Gatsby.`,
     author: `JAMstack Cincinnati`,
   },
@@ -8,6 +8,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
