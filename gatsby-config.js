@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/`,
+        path: `${__dirname}/src/resources/`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

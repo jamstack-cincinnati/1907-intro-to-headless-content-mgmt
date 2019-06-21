@@ -7,7 +7,7 @@ import SEO from "../../components/seo"
 const AboutPage = () => (
   <Layout>
     <SEO title="JAMstack" />
-    <div class="breadcrumbs">
+    <div className="breadcrumbs">
       <Link to="/">home</Link> / about
     </div>
     <h1>About JAMstack</h1>
