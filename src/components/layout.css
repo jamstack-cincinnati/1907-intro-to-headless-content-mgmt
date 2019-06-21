@@ -617,6 +617,8 @@ pre tt:after {
 }
 
 .breadcrumbs {
+  position: relative;
+  z-index: 100;
   padding: 1rem 0rem;
   text-transform: uppercase;
   font-size: .6rem;
@@ -631,12 +633,14 @@ pre tt:after {
 }
 
 button {
+  font-family: courier;
   font-weight: bold;
   font-size: 1rem;
   color: darkorange;
   border: none;
   width: 100%;
   outline: none;
+  background-color: transparent;
 }
 
 button:hover {
