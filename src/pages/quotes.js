@@ -12,6 +12,8 @@ const QuotePage = () => (
     </div>
     <h1>Hi from the second page</h1>
     <p>Welcome to the quotes page</p>
+
+
   </Layout>
 )
 

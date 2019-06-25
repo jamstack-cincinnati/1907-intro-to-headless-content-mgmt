@@ -18,8 +18,9 @@ Before we dig in, make sure you have the prerequisites covered:
 Setup
 ----------
 
-In this workshop, we'll be building a static site using [GatsbyJS](https://www.gatsbyjs.org/). First, install the Gatsby-CLI:
+In this workshop, we'll be building a static site using [GatsbyJS](https://www.gatsbyjs.org/). First, install the Gatsby-CLI with `npm` or `yarn`:
 
+    $ npm install -g gatsby-cli
     $ yarn global add gatsby-cli
 
 Set up a new Gatsby project using this repo as a starter kit:
