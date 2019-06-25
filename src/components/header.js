@@ -34,9 +34,9 @@ const Header = ({ siteTitle }) => (
 
 /*
   This file shows three different ways of applying styles:
-    `Banner` uses styled-components
-    `StyledLink` uses styled-components to extends the Gatsby `Link` component
-    `div` and `h1` use an inline style object
+    - `Banner` uses styled-components
+    - `StyledLink` uses styled-components to extend the Gatsby `Link`
+    - `div` and `h1` use an inline style object
 */
 
 Header.propTypes = {
