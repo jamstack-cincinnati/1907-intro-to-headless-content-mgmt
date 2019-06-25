@@ -12,6 +12,7 @@ const QuotePage = () => (
     <div className="breadcrumbs">
       <Link to="/">home</Link> / quotes
     </div>
+
     {data.map((q, idx) => (
       <QuoteBlock
         quote={q.quote}
@@ -19,6 +20,7 @@ const QuotePage = () => (
         votes={q.votes}
         key={`quote-${idx}`} />
     ))}
+
   </Layout>
 )
 

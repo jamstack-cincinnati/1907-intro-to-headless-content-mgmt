@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   border-radius: 15px;
 `;
 
-const Quote = styled.div`
+const Content = styled.div`
   flex: 10;
   p:first-child {
     font-size: 28px;
@@ -42,7 +42,7 @@ const Quote = styled.div`
   }
 `;
 
-const Vote = styled.div`
+const VoteCounter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,20 +68,20 @@ const QuoteBlock = (props) => {
 
   return (
     <Wrapper>
-      <Quote>
+      <Content>
         <p>{props.quote}</p>
         <p>- {props.name}</p>
-      </Quote>
-      <Vote>
+      </Content>
+      <VoteCounter>
         <button onClick={upVote}>&#9650;</button>
         <div>{count}</div>
         <button onClick={downVote}>&#9660;</button>
-      </Vote>
+      </VoteCounter>
     </Wrapper>
   )
 }
 
-Quote.defaultProps = {
+QuoteBlock.defaultProps = {
   name: "Vulputate Elit",
   votes: 1290,
   quote: "Nullam quis risus eget urna mollis ornare vel eu leo."

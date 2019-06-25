@@ -8,10 +8,26 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
+
+const Wrapper = styled.div `
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const Main = styled.main`
+  margin: 0 auto auto;
+  width: calc(100% - 5vw);
+  max-width: 960px;
+  padding: 0rem 1.0875rem 1.45rem;
+  padding-top: 0;
+`;
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,28 +41,19 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between'
-      }}
-    >
+    <Wrapper>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main
-        style={{
-          margin: '0 auto auto',
-          width: 'calc(100% - 5vw)',
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
+      <Main>
         {children}
-      </main>
-      <Footer />
-    </div>
+      </Main>
+
+      <footer style={{ textAlign: 'center', fontSize: '0.8rem' }}>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a> for <a href="https://www.meetup.com/JAMstack-Cincinnati/" target="_blank" rel="noopener noreferrer">JAMstack Cincinnati</a>
+      </footer>
+
+    </Wrapper>
   )
 }
 
