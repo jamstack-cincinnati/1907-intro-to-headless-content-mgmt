@@ -1,16 +1,13 @@
-const cfg = require("../../src/resources/constants");
 const contentful = require("contentful-management");
 const dig = require("object-dig");
 
 exports.handler = async (event, context) => {
   let payload = JSON.parse(event.body);
-
   let client = contentful.createClient({
-    accessToken: process.env["CONTENTFUL_MANAGEMENT_TOKEN"]
+    accessToken: process.env.GATSBY_CONTENTFUL_MANAGEMENT_TOKEN
   });
-
   return await client
-    .getSpace(cfg.CONTENTFUL_SPACE_ID)
+    .getSpace(process.env.GATSBY_CONTENTFUL_SPACE_ID)
     .then(space => space.getEnvironment("master"))
     .then(env => env.getEntry(payload.contentful_id))
     .then(entry => {

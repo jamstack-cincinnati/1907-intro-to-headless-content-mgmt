@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-let cfg = require("../resources/constants");
 
 const Wrapper = styled.div`
   display: flex;
@@ -65,14 +64,17 @@ class QuoteBlock extends Component {
   }
 
   async componentDidMount() {
-    const url = `https://cdn.contentful.com/spaces/${cfg.CONTENTFUL_SPACE_ID}/entries/${this.props.contentful_id}`;
-    await fetch(`${url}?access_token=${cfg.CONTENTFUL_ACCESS_TOKEN}`)
+    const url = `https://cdn.contentful.com/spaces/${process.env.GATSBY_CONTENTFUL_SPACE_ID}/entries/${this.props.contentful_id}`;
+    await fetch(
+      `${url}?access_token=${process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN}`
+    )
       .then(response => response.json())
       .then(myJson => {
         this.setState({
           count: myJson.fields.votes
         });
-      });
+      })
+      .catch(console.error);
   }
 
   async saveVote(action) {
@@ -80,8 +82,6 @@ class QuoteBlock extends Component {
       contentful_id: this.props.contentful_id,
       action: action
     };
-    console.log(data);
-
     await fetch(`/.netlify/functions/save-vote`, {
       method: "POST",
       headers: {
