@@ -13,9 +13,9 @@ const QuotePage = ({ data }) => (
     </div>
     {data.allContentfulQuote.edges.map((q, idx) => (
       <QuoteBlock
+        id={q.node.contentful_id}
         quote={q.node.body.body}
         name={q.node.attribution}
-        votes={q.node.votes}
         key={`quote-${idx}`}
       />
     ))}
@@ -29,8 +29,8 @@ export const query = graphql`
     allContentfulQuote {
       edges {
         node {
+          contentful_id
           attribution
-          votes
           body {
             body
           }

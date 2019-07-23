@@ -1,5 +1,6 @@
-import React, { useState } from "react"
-import styled from "styled-components"
+import React, { Component } from "react";
+import styled from "styled-components";
+let cfg = require("../resources/constants");
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const Wrapper = styled.div`
   margin: 2rem auto;
   padding: 2.5rem;
   max-width: 40rem;
-  background-color: #F8F2FB;
+  background-color: #f8f2fb;
   border-radius: 15px;
 `;
 
@@ -48,43 +49,64 @@ const VoteCounter = styled.div`
   align-items: center;
   flex: 1;
   margin-left: 1.6rem;
-  font-family: menlo, 'courier new', monospace;
+  font-family: menlo, "courier new", monospace;
   font-size: 1.3rem;
   div {
     padding: 8px 0px;
   }
 `;
 
-const QuoteBlock = (props) => {
-  let [count, setCount] = useState(props.votes)
-
-  function upVote() {
-    setCount(count + 1)
+class QuoteBlock extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
   }
 
-  function downVote() {
-    setCount(count - 1)
+  async componentDidMount() {
+    const url = `https://cdn.contentful.com/spaces/${cfg.CONTENTFUL_SPACE_ID}/entries/${this.props.id}`;
+    await fetch(`${url}?access_token=${cfg.CONTENTFUL_ACCESS_TOKEN}`)
+      .then(response => response.json())
+      .then(myJson => {
+        this.setState({
+          count: myJson.fields.votes
+        });
+      });
   }
 
-  return (
-    <Wrapper>
-      <Content>
-        <p>{props.quote}</p>
-        <p>- {props.name}</p>
-      </Content>
-      <VoteCounter>
-        <button onClick={upVote}>&#9650;</button>
-        <div>{count}</div>
-        <button onClick={downVote}>&#9660;</button>
-      </VoteCounter>
-    </Wrapper>
-  )
+  upVote() {
+    this.setState(state => ({
+      count: state.count + 1
+    }));
+  }
+
+  downVote() {
+    this.setState(state => ({
+      count: state.count > 0 ? state.count - 1 : 0
+    }));
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Content>
+          <p>{this.props.quote}</p>
+          <p>- {this.props.name}</p>
+        </Content>
+        <VoteCounter>
+          <button onClick={this.upVote.bind(this)}>&#9650;</button>
+          <div>{this.state.count}</div>
+          <button onClick={this.downVote.bind(this)}>&#9660;</button>
+        </VoteCounter>
+      </Wrapper>
+    );
+  }
 }
 
 QuoteBlock.defaultProps = {
   name: "Vulputate Elit",
-  votes: 1290,
   quote: "Nullam quis risus eget urna mollis ornare vel eu leo."
-}
+};
 
-export default QuoteBlock
+export default QuoteBlock;
