@@ -1,3 +1,5 @@
+let cfg = require("./src/resources/constants");
+
 module.exports = {
   siteMetadata: {
     title: `JAMstack Cincinnati`,
@@ -49,8 +51,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `d1f8a2qb0dss`,
-        accessToken: `TVDIF_WpPptNG9_tgCa5kuaxEyEUlEOLO9wZANW995M`
+        spaceId: cfg.CONTENTFUL_SPACE_ID,
+        accessToken: cfg.CONTENTFUL_ACCESS_TOKEN
       }
     }
 
