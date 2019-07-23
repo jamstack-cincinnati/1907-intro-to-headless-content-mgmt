@@ -75,16 +75,38 @@ class QuoteBlock extends Component {
       });
   }
 
+  async saveVote(action) {
+    let data = {
+      contentful_id: this.props.contentful_id,
+      action: action
+    };
+    console.log(data);
+
+    await fetch(`/.netlify/functions/save-vote`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+  }
+
   upVote() {
-    this.setState(state => ({
-      count: state.count + 1
-    }));
+    this.setState(
+      state => ({
+        count: state.count + 1
+      }),
+      this.saveVote.bind(this, "add")
+    );
   }
 
   downVote() {
-    this.setState(state => ({
-      count: state.count > 0 ? state.count - 1 : 0
-    }));
+    this.setState(
+      state => ({
+        count: state.count > 0 ? state.count - 1 : 0
+      }),
+      this.saveVote.bind(this, "subtract")
+    );
   }
 
   render() {
