@@ -65,7 +65,7 @@ class QuoteBlock extends Component {
   }
 
   async componentDidMount() {
-    const url = `https://cdn.contentful.com/spaces/${cfg.CONTENTFUL_SPACE_ID}/entries/${this.props.id}`;
+    const url = `https://cdn.contentful.com/spaces/${cfg.CONTENTFUL_SPACE_ID}/entries/${this.props.contentful_id}`;
     await fetch(`${url}?access_token=${cfg.CONTENTFUL_ACCESS_TOKEN}`)
       .then(response => response.json())
       .then(myJson => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -13,7 +13,7 @@ const QuotePage = ({ data }) => (
     </div>
     {data.allContentfulQuote.edges.map((q, idx) => (
       <QuoteBlock
-        id={q.node.contentful_id}
+        contentful_id={q.node.contentful_id}
         quote={q.node.body.body}
         name={q.node.attribution}
         key={`quote-${idx}`}
@@ -29,6 +29,7 @@ export const query = graphql`
     allContentfulQuote {
       edges {
         node {
+          id
           contentful_id
           attribution
           body {
