@@ -1,92 +1,55 @@
-Getting Started with Static Site Generators
-==========
+# Gettin' JAMMY w/ it
 
-This site supports JAMstack Cincinnati's June 2019 meetup on _Getting Started with Static Site Generators_. This meetup represents the second in a multi-step series on getting comfortable working with the JAMstack.
+This site supports JAMstack Cincinnati's July 2019 meetup on _Getting Started with Headless CMS_. This meetup represents the third in a multi-step series on getting comfortable working with the JAMstack.
 
-[Workshop Presentation](https://docs.google.com/presentation/d/12_HeL80Du2B6GEUQhsxrLm4R0gKGQdaM9Hm1JEtk_HQ/edit?usp=sharing)
+[Workshop Presentation](#) - TBD
 
-Prerequisites
-----------
+## Prerequisites
 
 Before we dig in, make sure you have the prerequisites covered:
 
-1. A basic understanding of [Git](https://git-scm.com/).
-2. A [GitHub account](https://github.com/).
-3. Basic knowledge of HTML and CSS.
-4. [Yarn](https://yarnpkg.com/en/docs/install) is not 100% necessary, but can make working with the project in development (on your machine) a little easier.
+1. You've got a copy of the [Gatsby project](https://git.io/fjVbN) from last month’s meetup working locally.
+2. You've deployed your project to [Netlify](https://netlify.com).
 
-Setup
-----------
+## Setup
 
-In this workshop, we'll be building a static site using [GatsbyJS](https://www.gatsbyjs.org/). First, install the Gatsby-CLI with `npm` or `yarn`:
+In this workshop, we'll be wiring up the "quotes" page of our Gatsby site to a custom model in [Contentful](https://www.contentful.com).
 
-    $ npm install -g gatsby-cli
-    $ yarn global add gatsby-cli
+The quotes and vote tallies will all be populated from Contentful. When a user clicks up or down to vote for a quote, we will store the new value in Contentful.
 
-Set up a new Gatsby project using this repo as a starter kit:
+## Running the Project Locally
 
-    $ gatsby new ssg-workshop https://github.com/jamstack-cincinnati/1906-getting-started-with-static-sites
+Instead of using the Gatsby-CLI, we'll be using Netlify-CLI for this workshop because it injects ENV variables directly into your local builds. Which is good.
 
-Switch to the project directory:
+Install it like this:
 
-    $ cd ssg-workshop
+```
+npm install netlify-cli -g
+```
 
+Run the server like this:
 
-Running the Project Locally
-----------
+```
+$ netlify dev
+```
 
-Gatsby-CLI includes [commands](https://www.gatsbyjs.org/docs/gatsby-cli/) to run a web server. Make sure the JS packages are installed first (`yarn install`) and then start  the development server:
+After doing this, you should be able to navigate to `http://localhost:8888` in your browser and see the _Netlify_ build of your project. _(Note, this is different than the Gatsby default which runs at `http://localhost:8000`)_
 
-    $ gatsby develop
-
-After doing this, you should be able to navigate to `http://localhost:8000` in your browser and see the home page of the project.
-
-You can also build and run a production version of your site using:
-
-    $ gatsby build
-    $ gatsby serve
-
-If you run into build errors, you can trying reseting the project cache using:
-
-    $ gatsby clean
-
-Repo Notes
-----------
-
+## Repo Notes
 
 Check the Wiki tab for some helpful Static Site Generator links.
 
 ### Branches
-* `master` - Workshop starter kit
-* `ssg-workshop-complete` - Completed workshop project
 
+- `master` - Workshop starter kit
+- `ssg-workshop-complete` - Completed workshop project
 
-Workshop
-----------
+## Workshop
 
 These are the steps we're going to follow in the workshop:
 
 ### Basics
 
-* Project Structure & Routing
-* Pre-fetching with Gatsby Link
-* Gatsby Image
-
-
-### Building Blocks
-
-* Components
-* Props
-* State
-* Plugins
-  * Styled Components
-  * Web Font Loader
-
-
-### Deploying to Netlify
-
-* Build settings
-
-### Next Steps
-
-* July Meetup: [Getting Started With Headless CMS](https://www.meetup.com/JAMstack-Cincinnati/events/261657135/)
+- Create Contentful account & custom content-model for Quotes
+- Wire up `quotes.js` to Contentful
+- Create a new Lambda function to handle votes
