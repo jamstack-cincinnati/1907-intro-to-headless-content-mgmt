@@ -35,15 +35,6 @@ $ netlify dev
 
 After doing this, you should be able to navigate to `http://localhost:8888` in your browser and see the _Netlify_ build of your project. _(Note, this is different than the Gatsby default which runs at `http://localhost:8000`)_
 
-## Repo Notes
-
-Check the Wiki tab for some helpful Static Site Generator links.
-
-### Branches
-
-- `master` - Workshop starter kit
-- `ssg-workshop-complete` - Completed workshop project
-
 ## Workshop
 
 These are the steps we're going to follow in the workshop:
