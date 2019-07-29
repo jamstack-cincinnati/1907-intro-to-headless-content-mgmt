@@ -39,8 +39,7 @@ After doing this, you should be able to navigate to `http://localhost:8888` in y
 
 These are the steps we're going to follow in the workshop:
 
-### Basics
-
-- Create Contentful account & custom content-model for Quotes
-- Wire up `quotes.js` to Contentful
-- Create a new Lambda function to handle votes
+1. Deploy last month's project to Netlify
+2. Setup Contentful
+3. Populate quotes from Contentful
+4. Save vote tallies in Contentful
