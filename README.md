@@ -39,7 +39,9 @@ After doing this, you should be able to navigate to `http://localhost:8888` in y
 
 These are the steps we're going to follow in the workshop:
 
-1. Deploy last month's project to Netlify
+1. Deploy [last month's project](https://github.com/jamstack-cincinnati/1906-getting-started-with-static-sites) to Netlify
 2. Setup Contentful
 3. Populate quotes from Contentful
 4. Save vote tallies in Contentful
+
+You can follow along by reviewing [WORKSHOP.md](https://github.com/jamstack-cincinnati/1907-intro-to-headless-content-mgmt/blob/master/WORKSHOP.md)
