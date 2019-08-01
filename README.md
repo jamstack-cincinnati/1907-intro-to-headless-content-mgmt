@@ -2,7 +2,7 @@
 
 This site supports JAMstack Cincinnati's July 2019 meetup on _Getting Started with Headless CMS_. This meetup represents the third in a multi-step series on getting comfortable working with the JAMstack.
 
-[Workshop Presentation](#) - TBD
+[Workshop Presentation](https://tinyurl.com/headless-cms-presentation)
 
 ## Prerequisites
 
